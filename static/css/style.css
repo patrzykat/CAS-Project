@@ -1,0 +1,41 @@
+#map {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 500px;
+}
+
+.api-title {
+    text-align: center;
+    font-size: 5vw;
+}
+
+.tomato {
+    width: 100%;
+    height: 800px;
+    background-image: url("../img/tomatoes.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
+}
+
+.bg-black {
+    background: black;
+}
+
+.blackness {
+    background: black;
+    height: 40px;
+}
+
+.align-me {
+    padding-top: 8%;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.make-hella-big {
+    font-size: 4rem;
+}
