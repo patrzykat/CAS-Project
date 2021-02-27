@@ -1,3 +1,3 @@
 # CAS-Project
 
-Hosted on: https://patrzykat.github.io/CAS-Project/
+Hosted [here](https://patrzykat.github.io/CAS-Project/)
