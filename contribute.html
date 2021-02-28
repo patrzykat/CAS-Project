@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title>Contribute Reviews</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <!-- emailjs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init('user_rPU71X85K4kjZSFaf1iRJ');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_rioykup', 'contact_form', this)
+                    .then(function () {
+                        console.log('SUCCESS!');
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+                const message_div = document.getElementById('flash-message');
+                message_div.innerHTML = "Your email has been sent!";
+                message_div.classList.add("alert");
+                message_div.classList.add("alert-success");
+                const return_a = document.getElementById('return-to-home');
+                return_a.innerHTML = "Return to home screen";
+                return_a.classList.add("btn");
+                return_a.classList.add("btn-secondary");
+            });
+        }
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand ms-3" href="#">CAS Project</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item me-3">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="reviews.html">Our Reviews</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link active" href="#">Contribute</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section class="contribute-form pt-5 mt-5">
+    <div class="container">
+        <form id="contact-form" onsubmit="send_email.disabled = true">
+            <input type="hidden" name="contact_number">
+            <div class="mb-3">
+                <label for="email-address-id" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email-address-id" name="user_email" required>
+            </div>
+            <div class="mb-3">
+                <label for="subject-id" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject-id" name="user_subject" required>
+            </div>
+            <div class="mb-3">
+                <label for="message-id" class="form-label">Message</label>
+                <textarea class="form-control" id="message-id" rows="5" name="user_message" required></textarea>
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" name="send_email" type="submit" value="Send">
+            </div>
+        </form>
+
+        <div id="flash-message" role="alert"></div>
+
+        <div class="mt-5">
+            <a id="return-to-home" href="index.html"></a>
+        </div>
+
+    </div>
+</section>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+</html>

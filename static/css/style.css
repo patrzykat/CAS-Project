@@ -39,3 +39,7 @@
 .make-hella-big {
     font-size: 4rem;
 }
+
+.selection .row {
+    text-align: center;
+}
