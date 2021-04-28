@@ -14,3 +14,4 @@ For my CAS project, I decided to create a website that reviews restaurants near 
 - Javascript
 - Bootstrap
 - Mapbox API
+- Responsive Mobile Design
