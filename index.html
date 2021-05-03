@@ -70,25 +70,37 @@
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v11', // style URL
             center: [-63.578115137127206, 44.64282321266986], // starting position [lng, lat]
-            zoom: 15 // starting zoom
+            zoom: 14 // starting zoom
         });
 
         const markers = {
             0: {
                 lnglat: [-63.578115137127206, 44.64282321266986],
-                message: "<p>KoDoRaKu</p>"
+                message: "<p>Ko-Doraku</p>"
             },
             1: {
-                lnglat: [-63.57915825176123, 44.64274739795977],
-                message: "<p>MacDonalds</p>"
+                lnglat: [-63.58646253909558, 44.64030752633507],
+                message: "<p>Charger Burger</p>"
             },
             2: {
-                lnglat: [-63.57643866569217, 44.64342356751677],
-                message: "<p>Thai Express</p>"
+                lnglat: [-63.578902941212846, 44.64209390379388],
+                message: "<p>Chatime</p>"
+            },
+            3: {
+                lnglat: [-63.574718407086486, 44.64643464286597],
+                message: "<p>Five Guys</p>"
+            },
+            4: {
+                lnglat: [-63.59751398006856, 44.64550624744648],
+                message: "<p>East Coast Bakery</p>"
+            },
+            5: {
+                lnglat: [-63.57912818125189, 44.64233985066663],
+                message: "<p>Krave Burger</p>"
             }
         }
 
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < 9; i++) {
             const marker = new mapboxgl.Marker()
                 .setLngLat(markers[i].lnglat)
                 .setPopup(new mapboxgl.Popup().setHTML(markers[i].message)) // add popup
